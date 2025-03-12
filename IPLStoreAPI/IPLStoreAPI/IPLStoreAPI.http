@@ -1,0 +1,6 @@
+@IPLStoreAPI_HostAddress = http://localhost:5043
+
+GET {{IPLStoreAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
