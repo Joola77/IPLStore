@@ -38,6 +38,7 @@
     <div id="order-history">
       <p class="center">Loading...</p>
     </div>
+    <button onclick="goBack()">Back</button>
 
     <script>
       const apiBaseUrl = "https://localhost:7193/api";
@@ -111,6 +112,9 @@
       }
 
       window.onload = loadOrderHistory;
+      function goBack() {
+        window.location.href = "IPLFrontEnd.html";
+      }
     </script>
   </body>
 </html>

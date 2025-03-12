@@ -1,28 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|c:\\users\\vasavijoola\\desktop\\iplproject\\iplstoreapi\\iplstoreapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|solutionrelative:iplstoreapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|c:\\users\\vasavijoola\\desktop\\iplproject\\iplstoreapi\\iplstoreapi\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|solutionrelative:iplstoreapi\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|c:\\users\\vasavijoola\\desktop\\iplproject\\iplstoreapi\\iplstoreapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|solutionrelative:iplstoreapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|c:\\users\\vasavijoola\\desktop\\iplproject\\iplstoreapi\\iplstoreapi\\dto\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|solutionrelative:iplstoreapi\\dto\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|c:\\users\\vasavijoola\\desktop\\iplproject\\iplstoreapi\\iplstoreapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D32109D-CD4C-4133-9E8F-E2A3D2C0E6FE}|IPLStoreAPI\\IPLStoreAPI.csproj|solutionrelative:iplstoreapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\VasaviJoola\\Documents\\GitHub\\IPLStore\\IPLStoreAPI\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -87,69 +66,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CartRequest.cs",
-              "DocumentMoniker": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\DTO\\CartRequest.cs",
-              "RelativeDocumentMoniker": "IPLStoreAPI\\DTO\\CartRequest.cs",
-              "ToolTip": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\DTO\\CartRequest.cs",
-              "RelativeToolTip": "IPLStoreAPI\\DTO\\CartRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T07:44:22.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "IPLStoreAPI\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "IPLStoreAPI\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T17:20:00.514Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "IPLStoreAPI\\Controllers\\CartController.cs",
-              "ToolTip": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\Controllers\\CartController.cs",
-              "RelativeToolTip": "IPLStoreAPI\\Controllers\\CartController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T16:56:38.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "IPLStoreAPI\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "IPLStoreAPI\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAqwBkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T17:01:35.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\Program.cs",
-              "RelativeDocumentMoniker": "IPLStoreAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\Program.cs",
-              "RelativeToolTip": "IPLStoreAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T16:57:46.715Z",
-              "EditorCaption": ""
             }
           ]
         }

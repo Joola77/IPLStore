@@ -4896,11 +4896,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\IPLStoreAPI.csproj",
+      "projectUniqueName": "C:\\Users\\VasaviJoola\\Documents\\GitHub\\IPLStore\\IPLStoreAPI\\IPLStoreAPI\\IPLStoreAPI.csproj",
       "projectName": "IPLStoreAPI",
-      "projectPath": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\IPLStoreAPI.csproj",
+      "projectPath": "C:\\Users\\VasaviJoola\\Documents\\GitHub\\IPLStore\\IPLStoreAPI\\IPLStoreAPI\\IPLStoreAPI.csproj",
       "packagesPath": "C:\\Users\\VasaviJoola\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VasaviJoola\\Desktop\\IPLProject\\IPLStoreAPI\\IPLStoreAPI\\obj\\",
+      "outputPath": "C:\\Users\\VasaviJoola\\Documents\\GitHub\\IPLStore\\IPLStoreAPI\\IPLStoreAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4973,12 +4973,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.Net.Sdk.Compilers.Toolset",
-            "version": "[9.0.200, 9.0.200]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

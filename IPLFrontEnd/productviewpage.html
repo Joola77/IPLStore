@@ -9,7 +9,7 @@
     <h1>Product Details</h1>
     <div id="product-details">Loading...</div>
     <button onclick="viewCart()">View Cart</button>
-
+    <button onclick="goBack()">Back</button>
     <script>
       const apiBaseUrl = "https://localhost:7193/api";
 
@@ -73,6 +73,9 @@
 
       function viewCart() {
         window.location.href = "cartview.html";
+      }
+      function goBack() {
+        window.location.href = "IPLFrontEnd.html";
       }
     </script>
   </body>
