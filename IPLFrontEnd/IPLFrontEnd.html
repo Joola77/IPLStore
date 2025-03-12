@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Store - Product List</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .search-container {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>IPL Store - Products</h1>
+
+    <!-- Search Inputs -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchName"
+        placeholder="Search by Name"
+        onkeyup="searchProducts()"
+      />
+      <input
+        type="text"
+        id="searchCategory"
+        placeholder="Search by Category"
+        onkeyup="searchProducts()"
+      />
+      <input
+        type="text"
+        id="searchFranchise"
+        placeholder="Search by Franchise"
+        onkeyup="searchProducts()"
+      />
+      <button onclick="viewCart()">View Cart</button>
+    </div>
+
+    <!-- Product List Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Franchise</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="product-list">
+        <tr>
+          <td colspan="5" class="center">Loading...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      const apiBaseUrl = "https://localhost:7193/api";
+
+      async function fetchProducts(searchParams = {}) {
+        try {
+          // Build Query String for Filtering
+          const queryString = new URLSearchParams(searchParams).toString();
+          const url = queryString
+            ? `${apiBaseUrl}/products?${queryString}`
+            : `${apiBaseUrl}/products`;
+
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("Failed to fetch products");
+
+          const products = await res.json();
+          displayProducts(products);
+        } catch (error) {
+          console.error("Error fetching products:", error);
+          document.getElementById("product-list").innerHTML =
+            "<tr><td colspan='5' class='center'>Error loading products.</td></tr>";
+        }
+      }
+
+      function displayProducts(products) {
+        const productList = document.getElementById("product-list");
+        productList.innerHTML = "";
+
+        if (!products || products.length === 0) {
+          productList.innerHTML =
+            "<tr><td colspan='5' class='center'>No products found.</td></tr>";
+          return;
+        }
+
+        products.forEach((product) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${product.name}</td>
+            <td>${product.category}</td>
+            <td>${product.franchise}</td>
+            <td>$${product.price.toFixed(2)}</td>
+            <td>
+              <button onclick="viewProduct(${product.id})">View</button>
+            </td>
+          `;
+          productList.appendChild(row);
+        });
+      }
+
+      function searchProducts() {
+        const searchParams = {
+          name: document.getElementById("searchName").value,
+          category: document.getElementById("searchCategory").value,
+          franchise: document.getElementById("searchFranchise").value,
+        };
+
+        // Remove empty parameters from the query
+        Object.keys(searchParams).forEach(
+          (key) => !searchParams[key] && delete searchParams[key]
+        );
+
+        fetchProducts(searchParams);
+      }
+
+      async function viewProduct(id) {
+        window.location.href = `productviewpage.html?id=${id}`;
+      }
+
+      function viewCart() {
+        window.location.href = "cartview.html";
+      }
+
+      window.onload = () => fetchProducts();
+    </script>
+  </body>
+</html>

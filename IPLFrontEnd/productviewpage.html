@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+  </head>
+  <body>
+    <h1>Product Details</h1>
+    <div id="product-details">Loading...</div>
+    <button onclick="viewCart()">View Cart</button>
+
+    <script>
+      const apiBaseUrl = "https://localhost:7193/api";
+
+      function getProductIdFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("id");
+      }
+
+      async function fetchProductDetails() {
+        const productId = getProductIdFromUrl();
+        if (!productId) {
+          document.getElementById("product-details").innerHTML =
+            "<p>Product not found!</p>";
+          return;
+        }
+
+        try {
+          const res = await fetch(
+            `${apiBaseUrl}/products/getproductbyid/${productId}`
+          );
+          if (!res.ok) throw new Error("Product not found");
+
+          const product = await res.json();
+          document.getElementById("product-details").innerHTML = `
+            <h2 id="productname">${product.name}</h2>
+            <p>Price: $${product.price}</p>
+            <p>Franchise: ${product.franchise}</p>
+            <p>Category: ${product.category}</p>
+            <p>Description: ${product.description}</p>
+            <input type ="number" min="1" value="1" id="quantity"></input> 
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
+            `;
+        } catch (error) {
+          console.error("Error fetching product:", error);
+          document.getElementById("product-details").innerHTML =
+            "<p>Error loading product.</p>";
+        }
+      }
+
+      async function addToCart(id) {
+        try {
+          const prod = document.getElementById("productname").innerText;
+          const quantity = document.getElementById("quantity").value;
+          const requestBody = { name: prod, quantity: quantity };
+
+          const response = await fetch(`${apiBaseUrl}/Cart/AddToCart`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(requestBody),
+          });
+
+          if (!response.ok) throw new Error("Failed to add to cart");
+
+          alert("Product added to cart!");
+        } catch (error) {
+          console.error("Error adding to cart:", error);
+        }
+      }
+
+      window.onload = fetchProductDetails;
+
+      function viewCart() {
+        window.location.href = "cartview.html";
+      }
+    </script>
+  </body>
+</html>

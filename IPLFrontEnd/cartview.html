@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .center {
+        text-align: center;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Your Cart</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <tr>
+          <td colspan="4" class="center">Loading...</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="total-price"></h2>
+    <button onclick="placeOrder()">Place Order</button>
+
+    <script>
+      const apiBaseUrl = "https://localhost:7193/api";
+
+      async function fetchCartDetails() {
+        try {
+          const res = await fetch(`${apiBaseUrl}/Cart`);
+          if (!res.ok) throw new Error("Failed to fetch cart details");
+
+          const cartItems = await res.json();
+          displayCart(cartItems);
+        } catch (error) {
+          console.error("Error fetching cart:", error);
+          document.getElementById("cart-items").innerHTML =
+            "<tr><td colspan='4' class='center'>Error loading cart.</td></tr>";
+        }
+      }
+
+      function displayCart(cartItems) {
+        const cartItemsBody = document.getElementById("cart-items");
+        cartItemsBody.innerHTML = "";
+
+        if (!cartItems || cartItems.length === 0) {
+          cartItemsBody.innerHTML =
+            "<tr><td colspan='4' class='center'>Your cart is empty.</td></tr>";
+          return;
+        }
+
+        let totalAmount = 0;
+
+        cartItems.forEach((item) => {
+          const row = document.createElement("tr");
+          const itemTotal = item.price * item.quantity;
+          totalAmount += itemTotal;
+
+          row.innerHTML = `
+            <td>${item.productName}</td>
+            <td>$${item.price}</td>
+            <td>${item.quantity}</td>
+            <td>$${itemTotal.toFixed(2)}</td>
+          `;
+          cartItemsBody.appendChild(row);
+        });
+
+        document.getElementById(
+          "total-price"
+        ).innerText = `Total: $${totalAmount.toFixed(2)}`;
+      }
+
+      async function placeOrder() {
+        try {
+          const response = await fetch(`${apiBaseUrl}/Order/PlaceOrder`, {
+            method: "POST",
+          });
+
+          if (!response.ok) throw new Error("Failed to place order");
+
+          alert("Order placed successfully!");
+          window.location.href = "OrderHistory.html"; // Redirect to order history
+        } catch (error) {
+          console.error("Error placing order:", error);
+        }
+      }
+
+      window.onload = fetchCartDetails;
+    </script>
+  </body>
+</html>
